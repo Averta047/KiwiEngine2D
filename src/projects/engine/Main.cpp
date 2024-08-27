@@ -1,96 +1,75 @@
-#include "CAppWnd.h"
-#include "CDirectX.h"
-#include "GameUI/CGameUI.h"
-//#include "CTextures.h"
+#include <Windows.h>
 
-const bool VSYNC_ENABLED = false;
-const POINTS WINDOW_SIZE = { 730, 500 };
+#include <SDL.h>
+#include <stdio.h>
 
-CGameUI* g_pGameUI = nullptr;
-UINT g_ResizeWidth = 0, g_ResizeHeight = 0;
-
-LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-    if (g_pGameUI->MsgProc(hWnd, uMsg, wParam, lParam))
-    {
-        return true;
-    }
-
-    switch (uMsg)
-    {
-        case WM_SIZE:
-        {
-            if (wParam == SIZE_MINIMIZED)
-                return 0;
-
-            g_ResizeWidth = (UINT)LOWORD(lParam); // Queue resize
-            g_ResizeHeight = (UINT)HIWORD(lParam);
-
-            return 0;
-        }
-
-        case WM_DESTROY:
-        {
-            PostQuitMessage(0);
-            return 0;
-        }
-
-        default:
-        {
-            return DefWindowProc(hWnd, uMsg, wParam, lParam);
-        }
-    }
-}
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pScmdline, int iCmdshow)
 {
-	CAppWnd* pAppWnd = new CAppWnd();
-    CDirectX* pDirectX = new CDirectX();
-    //CTextures* pTextures = new CTextures();
-    g_pGameUI = new CGameUI();
+    //The window we'll be rendering to
+    SDL_Window* window = NULL;
 
-    if (!pAppWnd->InitializeWindow(WndProc, hInstance, "ImMagic", "Magic001", { 100, 100 }, WINDOW_SIZE))
+    //The surface contained by the window
+    SDL_Surface* screenSurface = NULL;
+
+    SDL_Surface* gHelloWorld = NULL;
+
+    //Initialize SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0)
     {
-        MessageBox(NULL, "Could not create window", "Error", MB_OK | MB_ICONERROR);
-        return 0;
+        printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
     }
-
-    pDirectX->Initialize(VSYNC_ENABLED, pAppWnd->GetWindow());
-    //pTextures->Initialize(pDirectX->GetDevice());
-    g_pGameUI->Initialize(pAppWnd->GetWindow(), pDirectX->GetDevice(), pDirectX->GetDeviceContext());
-
-    pAppWnd->SetWindowState(SW_SHOWNORMAL);
-
-    bool done = false;
-    while (!done)
+    else
     {
-        MSG msg;
-        while (::PeekMessage(&msg, nullptr, 0U, 0U, PM_REMOVE))
+        //Create window
+        window = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        if (window == NULL)
         {
-            ::TranslateMessage(&msg);
-            ::DispatchMessage(&msg);
-            if (msg.message == WM_QUIT)
-                done = true;
+            printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
         }
-        if (done)
-            break;
+        else
+        {
+            //Get window surface
+            screenSurface = SDL_GetWindowSurface(window);
 
-        pDirectX->SetBuffersSize(g_ResizeWidth, g_ResizeHeight);
-        pDirectX->BeginScene(0, 0, 0, 0);
-        g_pGameUI->Render();
-        pDirectX->EndScene();
+            gHelloWorld = SDL_LoadBMP("hello_world.bmp");
+            if (gHelloWorld == NULL)
+            {
+                printf("Unable to load image %s! SDL Error: %s\n", "02_getting_an_image_on_the_screen/hello_world.bmp", SDL_GetError());
+            }
+
+            //Fill the surface white
+            SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
+
+            SDL_BlitSurface(gHelloWorld, NULL, screenSurface, NULL);
+
+            //Update the surface
+            SDL_UpdateWindowSurface(window);
+
+            //Hack to get window to stay up
+            SDL_Event e; 
+            bool quit = false; 
+            while (quit == false) 
+            { 
+                while (SDL_PollEvent(&e)) 
+                { 
+                    if (e.type == SDL_QUIT) 
+                        quit = true; 
+                } 
+            }
+        }
     }
 
-    g_pGameUI->Shutdown();
-    //pTextures->Shutdown();
-    pDirectX->Shutdown();
+    SDL_FreeSurface(gHelloWorld);
+    gHelloWorld = NULL;
 
-    pAppWnd->ShutdownWindow();
+    //Destroy window
+    SDL_DestroyWindow(window);
 
-    delete pAppWnd;
-    delete pDirectX;
-    //delete pTextures;
-    delete g_pGameUI;
+    //Quit SDL subsystems
+    SDL_Quit();
 
-	return 0;
+	return EXIT_SUCCESS;
 }
