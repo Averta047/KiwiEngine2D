@@ -5,10 +5,294 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="vendors">
+      <UniqueIdentifier>{f4b6e893-cad3-4bde-b1b9-5fa17b622d9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\lua5">
+      <UniqueIdentifier>{702ab82b-2916-4d03-bbd7-e31597612c37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\LuaBridge">
+      <UniqueIdentifier>{4d133bb8-3a88-41d9-8f93-d5b431d51e41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendors\LuaBridge\detail">
+      <UniqueIdentifier>{39a1eeac-d50b-4066-b2c8-16ab437713b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lapi.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lauxlib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lbaselib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lcode.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lcorolib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lctype.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\ldblib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\ldebug.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\ldo.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\ldump.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lfunc.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lgc.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\linit.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\liolib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\llex.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lmathlib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lmem.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\loadlib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lobject.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lopcodes.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\loslib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lparser.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lstate.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lstring.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lstrlib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\ltable.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\ltablib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\ltm.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lundump.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lutf8lib.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lvm.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vendors\lua5\lzio.c">
+      <Filter>vendors\lua5</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\vendors\lua5\lapi.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lauxlib.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lcode.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lctype.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\ldebug.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\ldo.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lfunc.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lgc.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\ljumptab.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\llex.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\llimits.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lmem.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lobject.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lopcodes.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lopnames.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lparser.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lprefix.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lstate.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lstring.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\ltable.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\ltm.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lua.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lua.hpp">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\luaconf.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lualib.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lundump.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lvm.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\lua5\lzio.h">
+      <Filter>vendors\lua5</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\Array.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\Dump.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\List.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\LuaBridge.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\Map.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\Set.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\UnorderedMap.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\Vector.h">
+      <Filter>vendors\LuaBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\CFunctions.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\ClassInfo.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Config.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Enum.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Errors.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Expected.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\FlagSet.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\FuncTraits.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Globals.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Invoke.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Iterator.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaException.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaHelpers.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaRef.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Namespace.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Options.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Overload.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Result.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\ScopeGuard.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Stack.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\TypeTraits.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Userdata.h">
+      <Filter>vendors\LuaBridge\detail</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

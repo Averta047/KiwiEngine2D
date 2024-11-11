@@ -47,29 +47,29 @@
     <OutDir>..\..\..\game\</OutDir>
     <IntDir>$(SolutionDir)$(Configuration)\$(Platform)\OBJs\$(ProjectName)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
-    <IncludePath>$(SolutionDir)vendors\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)vendors\SDL2\Lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)vendors\SDL2\include;$(SolutionDir)vendors\SDL2_ttf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)vendors\SDL2\Lib\x64;$(SolutionDir)vendors\SDL2_ttf\Lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>..\..\..\game\</OutDir>
     <IntDir>$(SolutionDir)$(Configuration)\$(Platform)\OBJs\$(ProjectName)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
-    <IncludePath>$(SolutionDir)vendors\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)vendors\SDL2\Lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)vendors\SDL2\include;$(SolutionDir)vendors\SDL2_ttf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)vendors\SDL2\Lib\x64;$(SolutionDir)vendors\SDL2_ttf\Lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SDL_MAIN_HANDLED;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendors;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -78,21 +78,113 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SDL_MAIN_HANDLED;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendors;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\vendors\lua5\lapi.c" />
+    <ClCompile Include="..\..\vendors\lua5\lauxlib.c" />
+    <ClCompile Include="..\..\vendors\lua5\lbaselib.c" />
+    <ClCompile Include="..\..\vendors\lua5\lcode.c" />
+    <ClCompile Include="..\..\vendors\lua5\lcorolib.c" />
+    <ClCompile Include="..\..\vendors\lua5\lctype.c" />
+    <ClCompile Include="..\..\vendors\lua5\ldblib.c" />
+    <ClCompile Include="..\..\vendors\lua5\ldebug.c" />
+    <ClCompile Include="..\..\vendors\lua5\ldo.c" />
+    <ClCompile Include="..\..\vendors\lua5\ldump.c" />
+    <ClCompile Include="..\..\vendors\lua5\lfunc.c" />
+    <ClCompile Include="..\..\vendors\lua5\lgc.c" />
+    <ClCompile Include="..\..\vendors\lua5\linit.c" />
+    <ClCompile Include="..\..\vendors\lua5\liolib.c" />
+    <ClCompile Include="..\..\vendors\lua5\llex.c" />
+    <ClCompile Include="..\..\vendors\lua5\lmathlib.c" />
+    <ClCompile Include="..\..\vendors\lua5\lmem.c" />
+    <ClCompile Include="..\..\vendors\lua5\loadlib.c" />
+    <ClCompile Include="..\..\vendors\lua5\lobject.c" />
+    <ClCompile Include="..\..\vendors\lua5\lopcodes.c" />
+    <ClCompile Include="..\..\vendors\lua5\loslib.c" />
+    <ClCompile Include="..\..\vendors\lua5\lparser.c" />
+    <ClCompile Include="..\..\vendors\lua5\lstate.c" />
+    <ClCompile Include="..\..\vendors\lua5\lstring.c" />
+    <ClCompile Include="..\..\vendors\lua5\lstrlib.c" />
+    <ClCompile Include="..\..\vendors\lua5\ltable.c" />
+    <ClCompile Include="..\..\vendors\lua5\ltablib.c" />
+    <ClCompile Include="..\..\vendors\lua5\ltm.c" />
+    <ClCompile Include="..\..\vendors\lua5\lundump.c" />
+    <ClCompile Include="..\..\vendors\lua5\lutf8lib.c" />
+    <ClCompile Include="..\..\vendors\lua5\lvm.c" />
+    <ClCompile Include="..\..\vendors\lua5\lzio.c" />
     <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\vendors\lua5\lapi.h" />
+    <ClInclude Include="..\..\vendors\lua5\lauxlib.h" />
+    <ClInclude Include="..\..\vendors\lua5\lcode.h" />
+    <ClInclude Include="..\..\vendors\lua5\lctype.h" />
+    <ClInclude Include="..\..\vendors\lua5\ldebug.h" />
+    <ClInclude Include="..\..\vendors\lua5\ldo.h" />
+    <ClInclude Include="..\..\vendors\lua5\lfunc.h" />
+    <ClInclude Include="..\..\vendors\lua5\lgc.h" />
+    <ClInclude Include="..\..\vendors\lua5\ljumptab.h" />
+    <ClInclude Include="..\..\vendors\lua5\llex.h" />
+    <ClInclude Include="..\..\vendors\lua5\llimits.h" />
+    <ClInclude Include="..\..\vendors\lua5\lmem.h" />
+    <ClInclude Include="..\..\vendors\lua5\lobject.h" />
+    <ClInclude Include="..\..\vendors\lua5\lopcodes.h" />
+    <ClInclude Include="..\..\vendors\lua5\lopnames.h" />
+    <ClInclude Include="..\..\vendors\lua5\lparser.h" />
+    <ClInclude Include="..\..\vendors\lua5\lprefix.h" />
+    <ClInclude Include="..\..\vendors\lua5\lstate.h" />
+    <ClInclude Include="..\..\vendors\lua5\lstring.h" />
+    <ClInclude Include="..\..\vendors\lua5\ltable.h" />
+    <ClInclude Include="..\..\vendors\lua5\ltm.h" />
+    <ClInclude Include="..\..\vendors\lua5\lua.h" />
+    <ClInclude Include="..\..\vendors\lua5\lua.hpp" />
+    <ClInclude Include="..\..\vendors\lua5\luaconf.h" />
+    <ClInclude Include="..\..\vendors\lua5\lualib.h" />
+    <ClInclude Include="..\..\vendors\lua5\lundump.h" />
+    <ClInclude Include="..\..\vendors\lua5\lvm.h" />
+    <ClInclude Include="..\..\vendors\lua5\lzio.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Array.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\CFunctions.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\ClassInfo.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Config.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Enum.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Errors.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Expected.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\FlagSet.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\FuncTraits.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Globals.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Invoke.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Iterator.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaException.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaHelpers.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\LuaRef.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Namespace.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Options.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Overload.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Result.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\ScopeGuard.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Stack.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\TypeTraits.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\detail\Userdata.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Dump.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\List.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\LuaBridge.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Map.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Set.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\UnorderedMap.h" />
+    <ClInclude Include="..\..\vendors\LuaBridge\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
